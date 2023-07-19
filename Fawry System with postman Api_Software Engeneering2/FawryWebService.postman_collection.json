@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "96d9eef3-f697-451c-b7b2-50a958549e6c",
+		"name": "FawryWebService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25069920"
+	},
+	"item": [
+		{
+			"name": "fawry requests",
+			"item": [
+				{
+					"name": "rejester",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"userName\":\"mah\",\r\n            \"password\":\"0123\",\r\n            \"email\":\"mah@gmail\",\r\n            \"wallet\":{\r\n                \"money\":0\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rejester",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rejester"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sign-in/mah@gmail/0123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sign-in",
+								"mah@gmail",
+								"0123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search service",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service/Mobile/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"Mobile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/provider/Torrent/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provider",
+								"Torrent",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"discountAmmount\":5,\r\n    \r\n            \"serviceInfo\":{\r\n                \"serviceName\":\"InternetPayment\",\r\n                \"serviceId\":3\r\n            }\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/discount/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discount",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get available discount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/discount/InternetPayment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"discount",
+								"InternetPayment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add refund",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"amount\":20,\r\n            \"userId\":1,\r\n            \"service\":{\r\n                \"serviceName\":\"InternetPayment\"\r\n            }\r\n            \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/refund/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refund",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject/accept refund",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/refund/accept/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refund",
+								"accept",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show refund trans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/refund/trans/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refund",
+								"trans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment cash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cash/Vodafone/120/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cash",
+								"Vodafone",
+								"120",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment credit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/credit/We/120/147852/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"credit",
+								"We",
+								"120",
+								"147852",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment wallet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/wallet/We/120/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wallet",
+								"We",
+								"120",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payment/trans/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment",
+								"trans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wallet trans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/wallet/trans/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wallet",
+								"trans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
